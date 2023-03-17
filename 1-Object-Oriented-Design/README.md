@@ -46,13 +46,20 @@
 
 - From a conceptual design, we move to making a technical design where, just like building design, you try to add a detail how those components, connections and responsibilities can be implemented. For example, we refine each component until it is specific enough to be designed in detail.
 
-- Components, when they are refined enough, turn into collections of functions, classes or other components. These pieces then represent a much simpler problem that the developers can individually implement. You can easily imagine that larger systems require more design time. With large systems, there are also more components, connections and responsibilities to keep track of. And since these components themselves will be big, they will be refined to many more components before the design can be detailed.
+- Components, when they are refined enough, turn into collections of functions, classes or other components. These pieces then represent a much simpler problem that the developers can individually implement. You can easily imagine that larger systems require more design time. With large systems, there are also more components, connections and responsibilities to keep track of. And since these components themselves will be bi, they will be refined to many more components before the design can be detailed.
 
 
 ## [Expressing Requirements with User Stories](https://d3c33hcgiwev3.cloudfront.net/_dd374195fd4bdd2f8a95b9ebc8409246_User-Stories.pdf?Expires=1679097600&Signature=YwV1s9LQ~O-j6STNYfpGyLaF7TMPmWK4qpsrfyRC23z4J-B2J3u2yPjZSjvleRYito--TYJLDzJkPih6cQ-04LvGQVnEYsoXUATeTIIcz95oiQVVyu~5Sn1F6ySnNLP5lQZPY6A~Uw9Et3ZAzUwwWJEePGkS054Nb2e76yUMogg_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A)
   
 ## [Categories of Objects in Design](https://d3c33hcgiwev3.cloudfront.net/_12fa1381f24f1477da387de9693313da_Categories-of-Objects.pdf?Expires=1679097600&Signature=gFYHe3fWF2in5A~I0SbMGG7K66H5tuPf~-qTqjwkLeSPDyhz6PNes9ikET3POaT6cpi7ob3nLKmsEBv27JCCrn68pByp3Q~xRYHu4LGFNyj82tIiyXc4XhQuPG4mTiJx8j7SrtrrKnemIE9D4hAjV6JYw7h69QzjgxmIyNUn7ms_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A)
 
+
+# Class Responsibility Collaborator (CRC)
+- You identify components, connections and responsibilities from some requirements when forming the conceptual design. This is where you give your initial thoughts on how you might satisfy the requirements. In the technical design, you learned how these components and connections are further refined to give them technical details. This makes them easier to implement. Although identifying components, their responsibilities and connections, is a good first step in software design, we haven't yet demonstrated a way of representing them.
+
+- This technique uses CRC cards where CRC stands for Class, Responsibility, Collaborator. Similar to how note cards help you organize your talking points, CRC cards help you to organize your components into classes, identify the responsibilities and determine how they will collaborate with each other. 
+
+<img src="assets/CRC_Card.jpg"  /> 
   
 
 # Week 2
