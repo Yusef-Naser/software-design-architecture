@@ -83,22 +83,57 @@
 
 1- **Abstraction**
     - Abstraction is one of the main ways that humans deal with complexity. Abstraction is the idea of simplifying a concept in the problem domain to its essentials within some context. Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details.
+    
     - [**Rule of Least Astonishment**](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) That is, the abstraction captures the essential attributes and behavior for a concept with no surprises and no definitions that fall beyond its scope. You don't want to surprise anyone trying to understand your abstraction with irrelevant characteristics.
     
     - Within the context of an abstraction, anything other than a concept's essential attributes and behaviors is irrelevant. When considering our student in the context of an academic setting, we don't care whether the student has a pet or how they clean their kitchen or what their favorite video game is. Those are all irrelevant details to the abstraction in this context. Whenever we make abstractions, we need to remember our context. If the context changes, the right abstraction can as well.
     
-    
 
 2-   [**Encapsulation**](https://www.coursera.org/learn/object-oriented-design/lecture/cFBE5/1-2-4-encapsulation)
-    - Encapsulation is a fundamental design principle in object oriented modeling and programming 
+    - Encapsulation is a fundamental design principle in object oriented modeling and programming.
+    
     - Encapsulation involves three ideas. As the name suggests, it's about making a sort of capsule.
         - The capsule contains something inside, some of which you can access from the outside, and some of which you cannot. First, you bundle attribute values or data, and behaviors or functions, that manipulate those values together into a self-contained object. 
+        
         - Second, you can expose certain data and functions of that object, which can be accessed from other objects. 
+        
         - Third, you can restrict access to certain data and functions to only within that object.
+        
     - Encapsulation forms a self-contained object by bundling the data and functions it requires to work, exposes an interface whereby other objects can access and use it, and restricts access to certain inside details. 
+    
     - Encapsulation helps with data integrity. You can define certain attributes and methods of a class to be restricted from outside to access.
-    -  Encapsulation can secure sensitive information. For example, you may allow a student class to store a degree program and grade point average, GPA. The student class itself could support queries involving the GPA, without necessarily revealing the actual value of the GPA. For example, the student class could provide a method that tells whether the student is in good standing for the degree program, which uses the GPA and the calculation, but never reveals its actual value
+    
+    -  Encapsulation can secure sensitive information. For example, you may allow a student class to store a degree program and grade point average, GPA. The student class itself could support queries involving the GPA, without necessarily revealing the actual value of the GPA. For example, the student class could provide a method that tells whether the student is in good standing for the degree program, which uses the GPA and the calculation, but never reveals its actual value.
+    
     
 3- **Decompostion**
+    -  it's important to keep in mind the design principles work well together.
+    
+    - Decomposition is taking a whole thing and dividing it up into different parts. Or, on the flip side taking a bunch of separate parts with different functionalities, and combining them together to form a whole. Decomposition allows you to further break down problems into pieces that are easier to understand and solve.
+    
+    - A whole might have a fixed or dynamic number of a certain type of part. If there is a fixed number, then over the lifetime of the whole object it will have exactly that much of the part object.
+    
+    - There are sometimes parts with a dynamic number. Meaning, the whole object may gain new instances of those part objects over its lifetime.
+    
+    - because of encapsulation, the instrument panel treats the instruments like black boxes, and doesn't care about how they are implemented. One issue in decomposition involves the lifetimes of the whole object, and the part objects, and how they could relate. Lifetimes might be closely related.
+    
 
-4- **Generalization**
+
+4- **Generalization** 
+
+    - Generalization, helps us to reduce the amount of redundancy when solving problems.
+    
+    - Many behaviors and systems in the real world operate through repetitious actions.
+    
+    - We can model behaviors using methods. It lets us generalize behaviors and it eliminates the need to have identical code written throughout a program.
+    
+    - Generalization is frequently used when designing algorithms, which are meant to be used to perform the same action on different sets of data. We can generalize the actions into its own method, and simply pass it through a different set of data through arguments.
+    
+    - Generalization happens to be one of the main design principles of object-oriented modeling and programming.
+    
+    - Generalization can be achieved by classes through inheritance.
+    
+    - Inheritance and methods exemplify the generalization design principle. There are techniques that left us apply a rule called D.R.Y., which stands for Don't Repeat Yourself.
+    
+    
+    
