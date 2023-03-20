@@ -62,7 +62,7 @@
 <img src="assets/CRC_Card.jpg"  /> 
   
 
-# Week 2 [https://www.coursera.org/learn/object-oriented-design/home/week/2]
+# [Week 2] (https://www.coursera.org/learn/object-oriented-design/home/week/2)
 
 ## Creating Models in Desing
 
