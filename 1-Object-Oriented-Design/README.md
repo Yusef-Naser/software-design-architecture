@@ -62,4 +62,43 @@
 <img src="assets/CRC_Card.jpg"  /> 
   
 
-# Week 2
+# Week 2 [https://www.coursera.org/learn/object-oriented-design/home/week/2]
+
+## Creating Models in Desing
+
+### Bridging Concepts and Solutions
+
+- There are design strategies in programming languages suited for solving certain kinds of problems. If you had a data processing problem
+
+- **  Top Down Programming ** This strategy map the processes in the problem to routines to be called. As you broke down the processing needs top down, you made a tree of routines for the eventual solution. These routines would be implemented in a programming language that supported subroutines. To make design easier, you don't want a big mental jump during design work between a concept in the problem space and how to deal with it in the solution space. If these concepts could be described in a design that made sense to both users and developers. you still don't go straight from the problem to writing the code. There's a conceptual design involving object-oriented analysis to identify the key objects in the problem. There's also technical design involving object-oriented design to further refine the details of the objects, including their attributes and behaviors. The design activities happen iteratively and continuously.
+    
+- ** Models ** && **Entity** These models are useful throughout the design process. Initially, the focus will be on the entity objects from the problem space. As a solution in software arises, you introduced control objects that receive events and coordinate actions.
+ 
+- **boundary** You also introduce boundary objects that connect to services outside your system.
+  
+- **UML** The models are often expressed in a visual notation called Unified Modeling Language or UML. In Object-Oriented Modeling, you have different sorts of models or UML diagrams to focus on different software issues, like a structural model, to describe what the objects do and how they relate. It's like having a scale model of a building to understand the spatial relationships. To deal with complexity, you can apply design principles and guidelines to simplify objects. Break them down into smaller parts and look for commonalities that can be handled consistently.
+
+
+## Four Design Principles
+
+1- **Abstraction**
+    - Abstraction is one of the main ways that humans deal with complexity. Abstraction is the idea of simplifying a concept in the problem domain to its essentials within some context. Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details.
+    - [**Rule of Least Astonishment**](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) That is, the abstraction captures the essential attributes and behavior for a concept with no surprises and no definitions that fall beyond its scope. You don't want to surprise anyone trying to understand your abstraction with irrelevant characteristics.
+    
+    - Within the context of an abstraction, anything other than a concept's essential attributes and behaviors is irrelevant. When considering our student in the context of an academic setting, we don't care whether the student has a pet or how they clean their kitchen or what their favorite video game is. Those are all irrelevant details to the abstraction in this context. Whenever we make abstractions, we need to remember our context. If the context changes, the right abstraction can as well.
+    
+    
+
+2-   [**Encapsulation**](https://www.coursera.org/learn/object-oriented-design/lecture/cFBE5/1-2-4-encapsulation)
+    - Encapsulation is a fundamental design principle in object oriented modeling and programming 
+    - Encapsulation involves three ideas. As the name suggests, it's about making a sort of capsule.
+        - The capsule contains something inside, some of which you can access from the outside, and some of which you cannot. First, you bundle attribute values or data, and behaviors or functions, that manipulate those values together into a self-contained object. 
+        - Second, you can expose certain data and functions of that object, which can be accessed from other objects. 
+        - Third, you can restrict access to certain data and functions to only within that object.
+    - Encapsulation forms a self-contained object by bundling the data and functions it requires to work, exposes an interface whereby other objects can access and use it, and restricts access to certain inside details. 
+    - Encapsulation helps with data integrity. You can define certain attributes and methods of a class to be restricted from outside to access.
+    -  Encapsulation can secure sensitive information. For example, you may allow a student class to store a degree program and grade point average, GPA. The student class itself could support queries involving the GPA, without necessarily revealing the actual value of the GPA. For example, the student class could provide a method that tells whether the student is in good standing for the degree program, which uses the GPA and the calculation, but never reveals its actual value
+    
+3- **Decompostion**
+
+4- **Generalization**
