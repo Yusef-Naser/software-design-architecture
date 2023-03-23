@@ -269,3 +269,114 @@ public class Employee {
 - Composition is the most dependent of the decomposition relationships. It forms a relationship that only exists as long as each object exists.
 
 > Decomposition is simply about whole objects containing part objects. Depending on your design, you can relate wholes to parts in different increasingly tighter ways. You can use association, a very loose interaction between two completely independent objects. An aggregation, one whole has a part, but both can live independently. And finally, in composition, the whole cannot exist without its parts and vice versa. All three relationships are useful and versatile for your software designs.
+
+4.1- **Generalization with Inheritance**
+
+<img src="assets/inhertance solidArrow.png" width="50%" height="50%"  /> 
+
+- You simply connect two classes with a solid lined arrow. This indicates, that two classes are connected by inheritance. The superclass is at the head of the arrow, and the subclass is at the tail. The standard way to draw inheritance into your UML diagrams, is to have the arrow pointing upward. This means that the superclasses are always toward the top, and the subclasses are always toward the bottom.
+
+<img src="assets/inhertance.png" width="50%" height="50%"  /> 
+
+- The superclasses are the generalized classes, and the subclasses are the specialized classes. 
+
+
+<img src="assets/Hash symbol inhertance.png" width="50%" height="50%"  /> 
+
+- The hash symbol is used to communicate that the animals attributes are protected. In Java, a protected attribute or method can only be accessed by, the encapsulating class itself, all subclasses, all classes within the same package. In Java, a package is simply a means in which the classes can be organized into a namespace that represents those classes.
+
+- We know that a subclass will have all attributes and behaviors of the superclass that it inherits from. So we do not need to put the superclass's attributes and behaviors in the subclass in our UML diagram. This is because the inheritance notation tells us that the subclass will already have the attributes and behaviors listed in the superclass. 
+
+```java
+
+public abstract class Animal {
+
+    protected int numberOfLegs;
+    protected int numberOfTails;
+    protected String name;
+
+    public Animal (String petName , int legs , int tails) {
+        this.name = petName;
+        this.numberOfLegs = legs ;
+        this.numberOfTails = tails ;
+    }
+
+    public void walk(){ ... }
+
+    public void run() { ... }
+
+    public void eat() { ... }
+
+}
+
+```
+- We use the keyword abstract to declare that this class cannot be instantiated. That means that we cannot create an animal object. The Animal class will be the superclass for our dogs subclass, any class that inherits from the Animal class will have its attributes and behaviors. This means that if we were to introduce a cat subclass into our system that inherited from the Animal class, the cat and dog subclasses would both have the same attributes and behaviors as the animal superclass.
+
+
+```java
+
+public class Dog {
+
+    public Dog (String name , int legs , int tails) {
+        super(name , legs , tails);
+    }
+
+    public void playFetch(){ ... }
+
+
+}
+
+```
+
+- Classes can have implicit constructors or explicit constructors. In this implementation of the Animal class, we have an implicit constructor, since we have not written our own constructor.
+
+- All attributes are assigned zero or null, when using the default constructor. The Animal class in this implementation, has an explicit constructor that will let us instantiate an animal with however many legs we want. Explicit constructors, are use of that we can assign values to attributes during instantiation
+
+- A subclass's constructor must call its superclass's constructor, if the superclass has an explicit constructor. This is because explicit constructors of the superclass must be referenced by the subclass. Otherwise the superclass attributes would not be appropriately initialized.
+
+4.1.1 - **Implementation inheritance**
+- For Java, only single implementation inheritance is allowed.
+
+- a superclass can have multiple subclasses. A subclass can only inherit from one superclass. For example, the dog and cat subclasses can each only have implementation inheritance with one superclass, which is animal. The animal superclass however, can have any number of subclasses, two in this example. 
+
+
+<img src="assets/Implementation inheritance.png" width="50%" height="50%"  /> 
+
+
+4.2 - **Generalization with Interfaces in Java and UML**
+
+- A JAVA interface also denotes a type. Unlike a class, however, an interface only declares method signatures, and no constructors, attributes, or method bodies. It specifies the expected behaviors in the method signatures, but does not provide any implementation details. In JAVA, an interface is also used for subtyping. If a dog class implements an I animal interface, then a dog object behaves not only like a dog, but it is also expected to behave like an animal by providing all the method bodies for the method signatures listed in the interface. Just like with inheritance, the dog is an animal. However, the difference is that the dog class needs to provide the implementation details for what it means to be an animal.
+
+- an interface is like a contract to be fulfilled by implementing classes. 
+
+- In both inheritance and interfaces, you achieve consistency between the dog type and the animal type so that a dog object is usable anywhere in your program when you are dealing with an animal type. 
+
+- Unlike inheritance, interfaces are not a generalization of a set of classes. It is important to understand that interfaces are not classes. They are used to describe behaviors
+
+
+```java
+
+public interface IAnimal {
+    public void move();
+    public void move();
+    public void move();
+}
+
+public class Dog implement IAnimal {
+
+    public void move(){ ... };
+    public void move(){ ... };
+    public void move(){ ... };
+
+
+}
+
+
+```
+
+- Interfaces are drawn in a similar way that classes are drawn in UMLs. Interfaces are explicitly noted in UML class diagrams using guillemets, or French quotes, to surround the words interface. The interaction between an interface and a class that is implementing the interface is indicated using a dotted arrow. The class touches the tail end of the arrow and the interface touches the head of the arrow.
+
+<img src="assets/interfaceUML.png" width="50%" height="50%" dir="RTL"  /> 
+
+<img src="assets/interfaceArrow.png" width="50%" height="50%" dir="LTR"  /> 
+
