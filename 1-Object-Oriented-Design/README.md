@@ -163,10 +163,109 @@
     - Third, you can restrict access to certain data and functions to only within that object.
     
     
-<img src="assets/encapsultation.png"  /> 
+<img src="assets/encapsultation.png" width="50%" height="50%"  /> 
 
 - This would be the UML class diagram for the student class. The student class has its attributes hidden from public accessibility. This is denoted by the minus signs before GPA and degree program. These minus signs indicate that a method or attribute is private. Private attributes can only be accessed from within the class. Outside this class, instead of being able to directly manipulate the student's GPA attribute, you must set the GPA through a public method setGPA. By only allowing an object's data to be manipulated via a public method, you can control how and when that data is accessed. This control of data is like creating a gate. You only let access to data you allow. If your GPA was on a four point scale, you wouldn't want someone to be able to directly set the value to 10.
 
 3- **Decomposition in UML**
 
-- 
+- Definition of decomposition is taking a whole thing and dividing it up into different parts. Or, on the flip side, taking a bunch of separate parts with different functionalities and combining them together to form a whole.
+
+- There are three types of relationships found in decomposition, *association*, *aggregation*, and *composition*. They define the interaction between the whole and the parts.
+
+- **association**
+
+- Association is some relationship. This means that there is a loose relationship between two objects. These objects may interact with each other for some time. 
+            
+- For example, an object of a class may use services/methods provided by object of another class. This is like the relationship between person and airline. A person does not generally own an airline, but can interact with one. An airline can also interact with many person objects. There are some persons and some airlines, neither is dependent on the other.
+    
+
+- It is helpful to read UML diagrams which each box being called an object. This UML examines the relationship I described between person and airline. The straight line between two UML objects denotes that the relationship between them is an association. You can see that there is a 0..* found on both sides of the relationship. This means a person object is associated with zero or more airline objects. And an airline object is associated with zero or more person objects.
+
+<img src="assets/airline-person association.png" width="50%" height="50%"  /> 
+
+- Each of these relationships is between completely separate entities. If one object is destroyed, the other can continue to exist, unlike human and organ. There can be any number of each item in the relationship. One object does not belong to another.
+
+- association is a loose partnership between two objects that exist completely independently. They have numbers that are not tied to each other.
+
+```java
+public class Student {
+    public void play(Sport sport) {
+        
+    }
+}
+```
+
+- **Aggregation**
+
+- Aggregation is a has-a relationship where a whole has parts that belong to it. There may be sharing of parts among the wholes in this relationship. The has-a relationship from the whole to the parts is considered weak. What this means is although parts can belong to the wholes, they can also exist independently.
+ 
+- This is like the relationship between an airliner and its crew. An important part of the airliner is its crew. Without the crew, an airliner would not be able to fly. However, the airliner does not cease to exist if there is no crew on board. Same goes for the crew, they are part of the operation of the airliner but the crew does not cease to exist or become destroyed if they are not on board their airliner. These entities have a relationship, but can exist outside of it.
+
+<img src="assets/airline-crew Aggregation.png" width="50%" height="50%"  /> 
+
+- This UML class diagram describes the relationship I explained above between airliner and crew. It says that for an airliner object, it has zero or more crew members. Also, a crew member object can be had by zero or more airline objects. The empty diamond denotes which object is considered the whole and not the part in the relationship. This empty diamond is the symbol for aggregation. 
+
+- The aggregation we can see is between course section and students, pet stores and pets, and bookshelf and books. Each of these are a has-a relationship. A course has students, students have courses, and so on. But the relationship is weak. If one of the objects in the relationship is destroyed, it still makes sense that the other can continue to exist.
+
+
+```java
+public class Airliner {
+    private ArrayList<CrewMember> crew;
+    
+    public Airliner() {
+        crew = new ArrayList<CrewMember>();
+    }
+    
+    public void add (CrewMember member) {
+        ...
+    }
+
+}
+```
+- In the airliner class, there is a list of crew members. The list of crew members is initialized to be empty. And a public method allows new crew members to be added. The airliner has a crew. This means that an airliner can have zero or more crew members. You can try for yourself to create some code that uses aggregation.
+
+- Aggregation is a weak has-a relationship between classes. One object has the other, but the objects are not heavily linked. They can both exist without the other.
+
+
+- **Composition**
+
+- Composition is an exclusive containment of parts, otherwise known as a strong has-a relationship. What this means is that the whole cannot exist without its parts. If loses any of its parts, the whole ceases to exist. If the whole is destroyed, then all of its parts are destroyed too. Usually, you can only access the parts through its whole. Contained parts are exclusive to the whole.
+
+-  Compare this to the relationship between a house and a room. A house is made up of multiple rooms. However, if you were to remove the house, its rooms would cease to exist. You cannot have a room without its house.
+
+
+<img src="assets/room-house compostion.png" width="50%" height="50%"  /> 
+
+- This UML class diagram describes the relationship between a house and a room, that a house object has one or more room objects. The filled in diamond next to the house means that the house is the whole in the relationship. If the diamond is filled in, it means that has-a relationship is strong. The two related objects cannot exist without each other. The filled diamond denotes the relationship is composition.
+
+- The composition is between the human and brain pair. This relationship is between completely dependent classes. If one object is destroyed, then the other is too.
+
+```java
+public class Human {
+    private Brain brain;
+    
+    public Human() {
+        brain = new Brain();
+    }
+
+}
+```
+
+- In this example, the brain is created at the same time that the human object is. The brain does not need to be instantiated anywhere else, nor does it need to be passed into the human object on creation. The brain is automatically created with the human. The two parts, human and brain, are tightly dependent with one not being able to exist without the other.
+
+```java
+public class Employee {
+    private Salary salary;
+    
+    public Employee() {
+        salary = new Salary();
+    }
+
+}
+```
+- The employee cannot exist without a salary. And the salary cannot exist without an employee. On instantiating an employee, the salary part is made. The salary must always exist as long as the employee does from that point on.
+
+- Composition is the most dependent of the decomposition relationships. It forms a relationship that only exists as long as each object exists.
+
+> Decomposition is simply about whole objects containing part objects. Depending on your design, you can relate wholes to parts in different increasingly tighter ways. You can use association, a very loose interaction between two completely independent objects. An aggregation, one whole has a part, but both can live independently. And finally, in composition, the whole cannot exist without its parts and vice versa. All three relationships are useful and versatile for your software designs.
