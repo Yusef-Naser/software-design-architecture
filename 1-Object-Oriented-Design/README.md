@@ -137,3 +137,36 @@
 - Inheritance and methods exemplify the generalization design principle. There are techniques that left us apply a rule called D.R.Y., which stands for Don't Repeat Yourself.
     
 
+## [Expressing Design Structure in Java & UML Class Diagrams](https://www.coursera.org/learn/object-oriented-design/lecture/aXtWd)
+
+1- **Abstraction in UML**
+    - A UML Class Diagram, or just Class Diagram for short, allows you to represent your design in more detail than CRC cards can but it's still visual. Class Diagrams are much closer to the implementation and can easily be converted to classes in code.
+    
+    -  Abstraction, which you may recall, is the idea of simplifying a concept in the problem domain to its essentials within some context. 
+    
+    - Abstraction allows you to better understand a concept by breaking it down into a simplified description that ignores unimportant details. You can first apply abstraction at the design level using UML Class Diagrams then eventually convert the design into code.
+    
+    - You will see that additional details can be represented in a Class Diagram compared to a CRC card.
+    
+    - UML Class Diagrams are more suited for communicating the technical design of the software's implementation.
+    
+    
+<img src="assets/class-diagram-example.png"  /> 
+
+2- **Encapsulation in UML**
+
+-  As you will recall from an earlier lesson on encapsulation, it involves three ideas
+    - First, you bundle data, and functions that manipulate the data, into a self-contained object.
+    
+    - Second, you can expose certain data and functions of that object, which can be accessed from other objects.
+    
+    - Third, you can restrict access to certain data and functions to only within that object.
+    
+    
+<img src="assets/encapsultation.png"  /> 
+
+- This would be the UML class diagram for the student class. The student class has its attributes hidden from public accessibility. This is denoted by the minus signs before GPA and degree program. These minus signs indicate that a method or attribute is private. Private attributes can only be accessed from within the class. Outside this class, instead of being able to directly manipulate the student's GPA attribute, you must set the GPA through a public method setGPA. By only allowing an object's data to be manipulated via a public method, you can control how and when that data is accessed. This control of data is like creating a gate. You only let access to data you allow. If your GPA was on a four point scale, you wouldn't want someone to be able to directly set the value to 10.
+
+3- **Decomposition in UML**
+
+- 
