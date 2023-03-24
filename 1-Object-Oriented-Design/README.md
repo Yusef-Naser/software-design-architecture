@@ -380,3 +380,57 @@ public class Dog implement IAnimal {
 
 <img src="assets/interfaceArrow.png" width="50%" height="50%" dir="LTR"  /> 
 
+
+<img src="assets/interfaceWithClass UML.png" width="50%" height="50%"  /> 
+
+- This indicates that the class implements the interface. The standard way to draw interfaces on your UML class diagrams is to have the arrow pointing upward. This means that the interface is always toward the top, and the classes that implement them are always toward the bottom.
+
+
+<img src="assets/IAnimaland Dog.png" width="50%" height="50%"  /> 
+
+- If we translate the JAVA code to UML, the diagram for our animal interface example looks like this.
+
+
+- There are several advantages for interfaces. Knowing and understanding what these advantages are will help you to determine if you should use interfaces or use inheritance when you are designing your systems.
+
+- Like abstract classes, which are classes that cannot be instantiated, interfaces are a means in which you can implement polymorphism.
+
+- In object oriented languages, polymorphism is when two classes have the same description of a behavior, but the implementations of the behavior may be different. This can be seen when we compare a cat and a dog. How would you describe how each of these animals speak? Well, to simply put it, a cat meows and a dog barks. The description of the behavior is the same, both animals can speak. But the actual behavior implementation itself is different. This is known as polymorphism. It is simple to achieve in JAVA using an interface.
+
+- Just like with class inheritance, interfaces can inherit from other interfaces. And just like with class inheritance, interface inheritance should not be abused. This means that you should not be extending interfaces if you are simply trying to create a larger interface. Interface A should only inherit from interface B if the behaviors in interface A can fully be used as a substitution for interface B. A little confused? This example should clear things up.
+
+
+
+- Lets simplify the movement of a vehicle by restricting it s movement so that it can only travel along either the x-axis or y-axis. This interface can be used to describe the behaviors of vehicles on land or on water. But what if we need to implement the movement of a plane or a submarine that can also move in the zed-axis?
+
+```java
+
+public interface IVehicleMovement {
+    public void MoveOnX();
+    public void MoveOnY();
+}
+```
+
+- We can create a second interface that will inherit from our first one.
+
+```java
+
+public interface IVehicleMovement3D {
+    public void MoveOnZ();
+}
+
+```
+- Now, we can use the IVehicleMovement3D interface for all vehicles that have three-dimensional movement without having to add the Zed-axis movement to the interface used by the on-land and on-water vehicles.
+
+
+
+<img src="assets/class-interface.png" width="50%" height="50%"  /> 
+
+- Interfaces are powerful tool to allow you describe a set of behaviors. Classes can implement one or more interface at a time which allows them to have multiple types. Interfaces enable you to describe behaviors without the need to implement them, which allows you to reuse these abstractions. Just like with other constructs in object oriented modeling and programming, interfaces will help you to create programs with reusable and flexible code. Although they are a useful technique, remember that you should not be generalizing all behavior contracts into interfaces. They are meant to fulfill a specific need, which is to provide a way for related classes to work consistently.
+
+
+# [Weak 3](https://www.coursera.org/learn/object-oriented-design/home/week/3)
+
+
+## Design Princple.
+
